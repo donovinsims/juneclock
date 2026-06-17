@@ -1,27 +1,31 @@
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import tailwindcss from "@tailwindcss/vite";
+import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 import viteReact from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
-import tsConfigPaths from "vite-tsconfig-paths";
-import { nitro } from "nitro/vite";
+import viteTsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  resolve: {
+    dedupe: [
+      "react",
+      "react-dom",
+      "@tanstack/react-router",
+      "@tanstack/react-query",
+      "@tanstack/react-start",
+    ],
+  },
   plugins: [
-    tanstackStart({
-      // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-      // nitro/vite builds from this
-      server: { entry: "server" },
-    }),
+    tanstackStart({ server: { entry: "server" } }),
     nitro({
       preset: "vercel",
       vercel: {
-        // Use Node entry format instead of Vercel web handler to
-        // prevent runtime.node crash with srvx (prerendering).
+        // Node entry format to prevent runtime.node crash with srvx
         entryFormat: "node",
       },
     }),
     viteReact(),
     tailwindcss(),
-    tsConfigPaths(),
+    viteTsConfigPaths(),
   ],
 });

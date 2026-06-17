@@ -17,6 +17,10 @@ dist-ssr
 .vercel
 *.local
 
+# Wrangler / Cloudflare (legacy — project now deploys to Vercel)
+.wrangler/
+.dev.vars
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -27,3 +31,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Deepwork session state
+.slim/deepwork/
+
+# Lovable scaffold artifact (project no longer uses Lovable)
+.lovable/
+
+# OpenCode context cache
+.ctx/
