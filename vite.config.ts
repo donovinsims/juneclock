@@ -28,4 +28,25 @@ export default defineConfig({
     tailwindcss(),
     viteTsConfigPaths(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react": ["react", "react-dom"],
+          "vendor-router": [
+            "@tanstack/react-router",
+            "@tanstack/react-query",
+            "@tanstack/react-start",
+          ],
+          "vendor-utils": [
+            "zod",
+            "react-hook-form",
+            "sonner",
+            "tailwind-merge",
+            "class-variance-authority",
+          ],
+        },
+      },
+    },
+  },
 });

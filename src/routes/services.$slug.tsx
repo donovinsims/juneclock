@@ -8,6 +8,7 @@ import { FinalCta } from "@/components/site/FinalCta";
 import { CTA } from "@/components/site/CTA";
 import { BetaSpots } from "@/components/site/BetaSpots";
 import { getIndustry } from "@/data/industries";
+import { towns as allServiceTowns } from "@/data/serviceArea";
 import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -59,7 +60,7 @@ export const Route = createFileRoute("/services/$slug")({
             areaServed: [i.town, "Rockford, IL", "Loves Park, IL", "Machesney Park, IL", "Roscoe, IL", "Beloit, WI", "Janesville, WI"],
             offers: {
               "@type": "Offer",
-              price: "497",
+              price: 497,
               priceCurrency: "USD",
               description: "Beta pricing — 48-hour audit + 7-day automation build, one-time flat fee.",
             },
@@ -83,11 +84,13 @@ export const Route = createFileRoute("/services/$slug")({
       </div>
     </SiteShell>
   ),
-  errorComponent: ({ error }) => (
+  errorComponent: () => (
     <SiteShell>
       <div className="container-x py-32 text-center">
         <h1 className="text-3xl">Something went wrong</h1>
-        <p className="mt-3 text-muted-foreground">{error.message}</p>
+        <p className="mt-3 text-muted-foreground">
+          This page didn't load. Please try again or head home.
+        </p>
       </div>
     </SiteShell>
   ),
@@ -95,7 +98,8 @@ export const Route = createFileRoute("/services/$slug")({
 
 function IndustryPage() {
   const { industry: i } = Route.useLoaderData();
-  const localTowns = ["Loves Park", "Machesney Park", "Rockford", "Roscoe", "Beloit"]
+  const localTowns = allServiceTowns
+    .map((t) => t.split(",")[0])
     .filter((t) => t !== i.town)
     .slice(0, 2);
 
@@ -160,7 +164,7 @@ function IndustryPage() {
           </div>
           <ul className="space-y-5">
             {i.pains.map((p: string, idx: number) => (
-              <li key={idx} className="flex gap-4 rounded-[12px] border border-line bg-surface/40 p-5">
+              <li key={p} className="flex gap-4 rounded-[12px] border border-line bg-surface/40 p-5">
                 <span className="mono-num text-primary">{String(idx + 1).padStart(2, "0")}</span>
                 <span className="text-[17px] text-foreground/90">{p}</span>
               </li>
@@ -177,8 +181,8 @@ function IndustryPage() {
             The exact deliverables for your {i.name.toLowerCase()} shop.
           </h2>
           <div className="mt-12 grid gap-px overflow-hidden rounded-[12px] border border-line bg-line md:grid-cols-2">
-            {i.built.map((b: string, idx: number) => (
-              <div key={idx} className="bg-background p-6">
+            {i.built.map((b: string) => (
+              <div key={b} className="bg-background p-6">
                 <div className="flex items-start gap-3">
                   <div className="grid h-8 w-8 shrink-0 place-items-center rounded-md bg-primary/15 text-primary">
                     <Check className="h-4 w-4" />

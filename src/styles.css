@@ -42,8 +42,8 @@
   --color-line: var(--line);
   --color-dim: var(--muted-foreground);
 
-  --font-display: "Geist", "Inter", system-ui, sans-serif;
-  --font-sans: "Geist", "Inter", system-ui, sans-serif;
+  --font-display: "Geist", "Geist Fallback", sans-serif;
+  --font-sans: "Geist", "Geist Fallback", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 24px 48px -24px rgb(15 64 45 / 0.18);

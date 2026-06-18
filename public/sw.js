@@ -65,8 +65,12 @@ function cacheFirst(request, cacheName) {
   });
 }
 
-function networkFirst(request, cacheName) {
-  return fetch(request)
+function networkFirst(request, cacheName, timeoutMs) {
+  if (timeoutMs === undefined) timeoutMs = 2000;
+  var timeoutPromise = new Promise(function (_, reject) {
+    setTimeout(function () { reject(new Error("timeout")); }, timeoutMs);
+  });
+  return Promise.race([fetch(request), timeoutPromise])
     .then(function (response) {
       if (response.ok) {
         return caches.open(cacheName).then(function (cache) {
