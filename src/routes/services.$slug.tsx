@@ -9,6 +9,7 @@ import { CTA } from "@/components/site/CTA";
 import { BetaSpots } from "@/components/site/BetaSpots";
 import { getIndustry } from "@/data/industries";
 import { towns as allServiceTowns } from "@/data/serviceArea";
+import { motion } from "motion/react";
 import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -130,19 +131,86 @@ function IndustryPage() {
               <span>10 hrs/week back in 30 days — or free</span>
             </div>
           </div>
-          <aside className="rounded-[12px] border border-border bg-surface p-6 md:p-7">
-            <div className="eyebrow mb-3">What this is</div>
-            <p className="text-[15px] text-foreground">
-              A flat-fee, 9-day automation build for {i.name.toLowerCase()} shops. We audit one real job through your business, build the fix inside your existing tools, and hand you every credential on day 9.
-            </p>
-            <ul className="mt-5 space-y-2.5 text-sm text-foreground/85">
-              {["You own every login. No retainer.", "Installed in tools you already pay for.", "10 hrs/week back in 30 days or it's free."].map((x) => (
-                <li key={x} className="flex gap-2.5">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  <span>{x}</span>
-                </li>
-              ))}
-            </ul>
+          <aside className="overflow-hidden rounded-[12px] border border-border bg-background shadow-card flex flex-col">
+            <div className="px-6 pt-6 md:px-7 md:pt-7">
+              <div className="eyebrow">The process</div>
+            </div>
+
+            <div className="flex-1 flex flex-col px-6 pb-6 md:px-7 md:pb-7">
+              {/* Phase 1 — Audit */}
+              <motion.div
+                className="flex gap-4 items-start"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+              >
+                <div className="flex flex-col items-center">
+                  <div className="mt-1 h-[10px] w-[10px] shrink-0 rounded-full bg-primary" />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-foreground">48hr Audit</div>
+                  <div className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+                    One real job tracked through your business
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Connector */}
+              <motion.div
+                className="flex flex-1 justify-center overflow-hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+              >
+                <div className="w-px bg-line" />
+              </motion.div>
+
+              {/* Phase 2 — Build */}
+              <motion.div
+                className="flex gap-4 items-start"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.25, ease: "easeOut" }}
+              >
+                <div className="flex flex-col items-center">
+                  <div className="mt-1 h-[10px] w-[10px] shrink-0 rounded-full bg-primary" />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-foreground">7-day Build</div>
+                  <div className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+                    Automation built inside your existing tools
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Connector */}
+              <motion.div
+                className="flex flex-1 justify-center overflow-hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.45 }}
+              >
+                <div className="w-px bg-line" />
+              </motion.div>
+
+              {/* Phase 3 — Handover */}
+              <motion.div
+                className="flex gap-4 items-start"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
+              >
+                <div className="flex flex-col items-center">
+                  <div className="mt-1 h-[10px] w-[10px] shrink-0 rounded-full bg-primary" />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-foreground">Day 9 Handover</div>
+                  <div className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+                    Every credential — you own it, no subscription
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </aside>
         </div>
       </section>
