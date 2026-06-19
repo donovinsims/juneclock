@@ -51,9 +51,10 @@ function Index() {
       {/* Testimonial */}
       <section className="border-b border-line py-20 md:py-28">
         <div className="container-x max-w-4xl text-center">
-          <div className="eyebrow mb-4">First testimonial</div>
+          <div className="eyebrow mb-4">Real results</div>
           <h2 className="text-3xl md:text-4xl">
-            It works across industries. The outcome is the same.
+            It works across industries.<br />
+            <span>The outcome is the same.</span>
           </h2>
           <blockquote className="relative mt-12">
             <p className="text-balance text-lg leading-relaxed text-foreground/85 md:text-xl">
