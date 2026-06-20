@@ -124,7 +124,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="z-[60] w-[88vw] max-w-sm">
               <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
+                <SheetTitle className="sr-only">Menu</SheetTitle>
                 <SheetDescription className="sr-only">Site navigation</SheetDescription>
               </SheetHeader>
               <div className="mt-6 flex flex-col gap-1">

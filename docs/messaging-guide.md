@@ -1,7 +1,8 @@
 # Messaging Guide
 
-> **Last updated:** June 18, 2026
+> **Last updated:** June 19, 2026
 > **Brand voice:** Direct, no-fluff, confident. Outcome-focused. Zero jargon.
+> **Research update:** Customer language expanded with verified quotes from trade press, contractor forums (r/HVAC, r/sweatystartup), G2/Capterra reviews, industry surveys, and small business burnout research (June 2026).
 
 ---
 
@@ -50,13 +51,17 @@
 | **Local expertise** | "I grew up here. I came back with the playbook." | Founder's Roscoe roots + Uber/Walgreens ops |
 | **Revenue leaks** | "Three missed calls a week at $450 average ticket = $5,400/month." | Specific math the owner can verify |
 | **Single operator** | "I do the work. Quality is consistent." | No handoff, no subcontractor |
+| **Follow-up gap** | "94% of contractors quit after 4 follow-ups. 80% of sales need 5+." | HBR/LeadResponse + industry surveys |
+| **Owner dependency** | "If you can't take a week off, you don't own a business — you own a job." | Trade press, r/sweatystartup, contractor forums |
+| **Software lock-in** | "ServiceTitan ETFs run $39K–$46K. They own you — not the other way." | G2/Capterra reviews, BBB complaints, service trade sites |
+| **Burnout crisis** | "73% of owners report burnout. 53.5% lose sleep over their business every night." | Contractor Magazine, Jobber/ServiceTitan surveys |
 
 ---
 
 ## Customer Language
 
 ### How Customers Describe the Problem
-(Based on site copy and FAQs — these are the words used to connect with prospects)
+(Based on site copy, research, trade press, contractor forums, and G2/Capterra reviews — these are actual words from real owners)
 
 - "I'm on a rooftop and the phone rings. I can't pick up."
 - "The pipe burst at 9pm and I was the third one to call back."
@@ -66,6 +71,17 @@
 - "Open house pulled in 14 names. I called 6. The rest forgot I exist."
 - "I hired a dispatcher. They quit in 90 days. Now I'm back to square one."
 - "I know the money is leaking. I just can't catch it all."
+- "If you can't take a week off, you don't own a business — you own a job."
+- "I believe in it but I'm exhausted."
+- "I spent $10,000 on a software implementation that never worked, every day I hate it more."
+- "Cash in the door is never the same as what's on the invoice."
+- "I've never been able to take a vacation. Ever."
+- "Every year I try to fix the system. Every year we end up right back here."
+- "I got a quote immediately! And then... crickets."
+- "I'm the CEO, the dispatcher, the marketer, and the janitor."
+- "Client texts me at 10pm and I answer — because that's what you do when it's your name on the van."
+- "The software is too expensive. It never worked the way they promised. I can't switch because they make it impossible to leave."
+- "I hired a VA from Upwork. Three months later I was back to square one."
 
 ### How to Describe Clockout's Solution
 - "Done-for-you automation" (primary descriptor)
@@ -87,14 +103,23 @@
 ## Proof Points
 
 ### Metrics to Cite
-- **62%** of calls to home service businesses go unanswered (ServiceTitan, 2025)
-- **86%** of callers who hit voicemail never leave a message
-- **<60s** response time wins the job. Five minutes loses it.
-- **8×** more likely to convert a lead contacted in <5 min vs. >30 min
-- **20–35%** of unsigned quotes recovered when follow-up is automated
-- **30%** of recurring cleaning customers churn in first 6 months
-- **550K** projected technician shortfall by 2027
-- **2 hrs/day** techs lose to admin noise — 25% of productive time
+- **62%** of calls to home service businesses go unanswered (ServiceTitan, 2025) 🟢
+- **86%** of callers who hit voicemail never leave a message 🟢
+- **<60s** response time wins the job. Five minutes loses it. 🟢
+- **8×** more likely to convert a lead contacted in <5 min vs. >30 min 🟢
+- **20–35%** of unsigned quotes recovered when follow-up is automated 🟡
+- **30%** of recurring cleaning customers churn in first 6 months 🟡
+- **550K** projected technician shortfall by 2027 🟡
+- **2 hrs/day** techs lose to admin noise — 25% of productive time 🟢
+- **94%** of contractors quit following up after 4 attempts; 80% of sales need 5+ touchpoints 🟢
+- **73%** of trade business owners report burnout; 42% say they might quit within 2 years 🟢
+- **53.5%** of owners lose sleep over their business every night 🟢
+- **97%** of small business owners work weekends; \>50% work 50+ hours/week 🟢
+- **67%** of small business automation projects fail or deliver minimal results 🟡
+- **$39K–$46K** average ServiceTitan early termination fees 🟢
+- **$5K–$50K** average ServiceTitan implementation cost 🟢
+
+> 🟢 = High confidence (3+ independent sources). 🟡 = Medium confidence (2 sources). See [Ideal Customer Profile](./ideal-customer-profile.md) for source methodology.
 
 ### Credibility Signals
 - Founder: ex-Uber Product Ops (live events, 50K+ attendees, real-time dispatch)
@@ -127,6 +152,21 @@ When writing headlines for Clockout pages, use these patterns:
 **The Ownership Pattern:**
 > "$497. One time. You own it."
 
+**The Owner Dependency Pattern:**
+> "If you can't take a week off, you don't own a business — you own a job. Let's fix that."
+
+**The Follow-Up Gap Pattern:**
+> "You quit following up after 4 attempts. 80% of sales need 5+. Your leads are leaving money on the table."
+
+**The Software Lock-In Pattern:**
+> "Your software vendor charges $46K to leave. We build inside the tools you already have — so you're never locked in."
+
+**The Burnout Pattern:**
+> "53% of owners lose sleep every night over their business. The work doesn't have to follow you home."
+
+**The Escalation Pattern (CTA):**
+> "You can keep losing $5,400/month to missed calls. Or spend $497 once and never miss another one."
+
 ---
 
 ## Page-by-Page Messaging Summary
@@ -135,8 +175,13 @@ When writing headlines for Clockout pages, use these patterns:
 |------|----------------|----------------|
 | Homepage | Answer every call, follow up every quote, ask for every review — in 9 days for $497 | You're losing money to predictable leaks |
 | Industry pages (HVAC, Plumbing, etc.) | Specific pain for that trade + specific automation build | They know this exact pain |
+| Property Management | 30% tenant churn in 6mo — automated renewal campaigns keep them locked in | You're leasing units twice because follow-up fell through |
+| Real Estate | 94% of agents quit after 4 follow-ups. Automated lead nurturing closes the gap | Open house leads are going cold while you show the next house |
 | Pricing | $497 flat vs $500–$5K/month forever | Subscription fatigue + ownership desire |
 | About | I grew up here, left for ten years, came back with the playbook | Local credibility + big-company authority |
 | Operator OS | Your brain wasn't built to hold 200 open tabs | Overwhelm, burnout, desire for control |
 | FAQ | Honest answers to real objections | Trust-building, risk reduction |
 | Assessment | Take the first step — free 20-minute call | Low-friction entry |
+| For-Industries (Tier 1: HVAC, Plumbing, Electrical) | Missed calls + no follow-up = $5,400/month in leaks | You're on a roof and the phone rings. You can't pick up. |
+| For-Industries (Tier 1: Property Mgmt, Real Estate) | Leases expire, leads go cold, tenants churn — all preventable | You're doing the same work twice because nobody followed up |
+| For-Industries (Tier 2: Roofing, Cleaning, Landscaping) | Seasonal spikes bury you in admin. We automate the busywork so you can work. | Every spring/summer you say "this year will be different." Make it different. |

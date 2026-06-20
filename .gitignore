@@ -41,3 +41,6 @@ dist-ssr
 
 # OpenCode context cache
 .ctx/
+
+# MCP config (contains API keys)
+.mcp.json

@@ -2,9 +2,18 @@
 
 ## Strategy
 
-The goal is collect enough data to trace one real job through the business — phone → CRM → dispatch → invoice — in 48 hours. Every question either uncovers a leak category or gives context to price it.
+The form is the gatekeeper. Every question must either help Donovin qualify the lead or prepare for the 20-minute call. If it doesn't do one of those, cut it.
 
-**Keep it tight.** 10 questions. If any question doesn't help Donovin write the report, cut it.
+**Target: 7 questions.** Page copy reads "7 quick questions" (currently says "Six fields" — update assessment.tsx line 106 after changing the form).
+
+The call does the deep discovery. The form just gets Donovin oriented enough to sound prepared when he calls.
+
+### What Donovin needs to know before calling
+
+1. **Who they are** — name, company, trade
+2. **How to reach them** — email + phone (phone required — speed-to-lead)
+3. **What scale** — team size
+4. **What's broken** — one clear pain signal (not three, not a paragraph)
 
 ---
 
@@ -13,16 +22,18 @@ The goal is collect enough data to trace one real job through the business — p
 ### 1. What's your first name?
 - Type: short text
 - Required: yes
+- Note: Donovin uses their name on the call. Personal.
 
 ### 2. What's your email?
 - Type: email
 - Required: yes
-- Note: This is where the report lands.
+- Note: Where the report lands. Also the lead identifier.
 
 ### 3. What's your phone number?
 - Type: phone
-- Required: no
-- Note: "In case I need to clarify something on your form. I'll text before I call."
+- Required: **yes**
+- Note: "I'll text before I call so you're not caught off guard."
+- **Why required:** Speed-to-lead <5 min is Clockout's differentiator. Donovin calls. If the form doesn't capture a phone, the lead sits until an email reply comes back. That's the same leak Clockout fixes for clients.
 
 ### 4. What trade are you in?
 - Type: dropdown
@@ -34,82 +45,52 @@ The goal is collect enough data to trace one real job through the business — p
   - Electrical
   - Landscaping / Lawn Care
   - Cleaning / Janitorial
-  - Property Management
-  - Real Estate
+  - Property Management / Real Estate
   - Other (text field)
+- Note: Combined "Property Management" and "Real Estate" into one option (same operational patterns, fewer choices). Either way, this tags the lead for Donovin's context.
 
 ### 5. Company name
 - Type: short text
 - Required: yes
-- Note: "I'll use this in the report. No logos or branding needed."
+- Note: "I'll use this on our call. No logos or branding needed."
 
-### 6. How many techs or employees do you have?
+### 6. How big is your team?
 - Type: dropdown
 - Required: yes
 - Options:
   - Just me (solo operator)
   - 2–5
   - 6–15
-  - 16–30
-  - 30+
+  - 16+
+- Note: Simplified from 5 to 4 options. The "30+" bucket was too broad to be useful — 16+ tells Donovin enough.
 
-### 7. What tools do you use today? (check all that apply)
-- Type: checkbox group
-- Required: no
-- Options:
-  - I don't use any — it's all paper / memory
-  - Google Voice / basic phone system
-  - A real phone system (RingCentral, Dialpad, etc.)
-  - A CRM (Housecall Pro, ServiceTitan, Jobber, etc.)
-  - A separate scheduling / dispatch tool
-  - QuickBooks or similar for invoicing
-  - Google Calendar / iCal for scheduling
-  - A website with a booking form
-  - Other (text field)
-- Help text: "Don't overthink this. Check what applies. None of these disqualify you."
-
-### 8. Roughly how many calls does your shop get per week?
-- Type: dropdown
+### 7. What's the one thing costing you the most right now?
+- Type: dropdown (single select)
 - Required: yes
 - Options:
-  - 1–10
-  - 11–30
-  - 31–60
-  - 60+
-  - I have no idea
-
-### 9. Which of these feels most painful right now? (pick up to 3)
-- Type: checkbox group
-- Required: yes
-- Options:
-  - Calls I can't answer during the day
-  - After-hours / weekend calls going to voicemail
-  - Quotes sent but never signed
+  - Missed calls (especially after-hours and weekends)
+  - Slow quote follow-ups that go cold
+  - Disconnected tools and manual data entry
   - Scheduling chaos — wrong tech, wrong time, wrong job
-  - Chasing payments / slow invoices
-  - Customers who ghost after the first call
-  - No system — everything runs on my memory
-  - Not enough reviews / referral volume
-
-### 10. Is there anything specific you want me to look at?
-- Type: long text (multi-line)
-- Required: no
-- Placeholder: "What's the one thing that bugs you most? I'll make sure the audit covers it."
+  - Chasing payments and slow invoices
+  - Customer reviews and referrals (not happening)
+  - Something else — I want a full audit
+- Note: Single select instead of "pick up to 3." Faster to answer, clearer signal for Donovin. The "Something else" catch-all keeps it from being a barrier for people whose pain isn't listed.
 
 ---
 
-## Optional Add-ins
+## Changes from Previous Version
 
-Only include if the data would meaningfully change the audit or offer:
+| Change | Why |
+|--------|-----|
+| Q3 (phone) → **required** | Speed-to-lead is the differentiator. Donovin calls. |
+| Q6 (team size) → 4 options | Cut "30+" — not useful at this stage. |
+| Q7 (pain) → **single-select, 7 options** | "Pick up to 3" causes hesitation. One choice is faster and gives clearer signal. Added "disconnected tools" option (signals tech sophistication). |
+| ❌ Q7 (tools checklist) removed | 8 checkboxes = analysis paralysis. Donovin learns more from the pain answer plus the call. |
+| ❌ Q8 (call volume) removed | Most owners guess. Donovin gets a better number in 30 seconds on the call. |
+| ❌ Q10 (long text) removed | Very low fill rate. The space alone adds friction. Replaced by Q7 structured options. |
 
-### How did you hear about Clockout?
-- Type: dropdown
-- Options: Google, Referral, Social media, Podcast, Other
-- Purpose: Track marketing channels. Not needed for the audit itself.
-
-### What city are you based in?
-- Type: short text
-- Purpose: Only useful if Donovin needs to know service area for some reason (local SEO tracking, or if there's a geographic constraint on who he can audit).
+**Net: 10 questions → 7 questions.**
 
 ---
 
@@ -118,8 +99,31 @@ Only include if the data would meaningfully change the audit or offer:
 After submit, the page should show:
 
 > **Thanks, [name]!**
-> I'll review your answers and email your written report within 48 hours.
-> Check your inbox (and spam).
+> Donovin will review your answers and reach out within 24 hours.
+> Keep an eye on your inbox (and spam) for the written report.
 > — Donovin
 
-No secondary CTA. No upsell. The report arrives in their inbox — that's the next step.
+No secondary CTA. No upsell. The call invitation and report arrive next — that's the next step.
+
+---
+
+## Optional Add-ins (Keep out of main form)
+
+These can live as separate lightweight touches (post-submit page, SMS reply, or email follow-up):
+
+### How did you hear about Clockout?
+- Purpose: Track marketing channels. Ask on the call or in the follow-up email.
+
+### What city are you based in?
+- Purpose: Only useful for Donovin's context. Can be asked on the call.
+
+---
+
+## Page Copy Alignment
+
+The assessment page at `src/routes/assessment.tsx` line 106 currently says "Six fields." After updating the form to 7 questions, change this to "7 quick questions."
+
+```diff
+- Six fields. No phone tag.
++ 7 quick questions. No phone tag.
+```

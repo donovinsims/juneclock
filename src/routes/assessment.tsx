@@ -36,13 +36,11 @@ function AssessmentPage() {
   }, []);
 
   return (
-    <SiteShell>
+    <SiteShell stickyCta={false} leadMagnet={false}>
       {/* 1. Hero */}
       <section className="relative border-b border-line">
-        <div className="absolute inset-0 opacity-30" aria-hidden />
         <div className="absolute inset-0 torch" aria-hidden />
         <div className="container-x relative py-20 md:py-28">
-          <BetaSpots className="mb-6" />
           <h1 className="max-w-4xl text-5xl leading-[1.04] md:text-7xl">
             Find your 10 hours back. It takes 20 minutes.
           </h1>
@@ -64,7 +62,7 @@ function AssessmentPage() {
               <div key={c.title} className="bg-background p-6">
                 <div className="mono-num text-2xl text-amber">{c.figure}</div>
                 <h3 className="mt-4 text-xl">{c.title}</h3>
-                <p className="mt-3 text-sm text-foreground/75">{c.body}</p>
+                <p className="mt-3 text-sm text-foreground/80">{c.body}</p>
               </div>
             ))}
           </div>
@@ -88,7 +86,7 @@ function AssessmentPage() {
                   <span className="mono-num text-amber">{s.n}</span>
                   <span className="mono-num text-xs text-dim">{s.time}</span>
                 </div>
-                <h3 className="mt-6 text-2xl">{s.t}</h3>
+                <h3 className="mt-4 text-xl">{s.t}</h3>
                 <p className="mt-3 text-foreground/80">{s.b}</p>
               </li>
             ))}
@@ -102,10 +100,10 @@ function AssessmentPage() {
       {/* 5. Tally form */}
       <section id="form" className="border-b border-line py-20 md:py-28">
         <div className="container-x">
-          <div className="eyebrow mb-3">Step 1</div>
+          <div className="eyebrow mb-3">The form</div>
           <h2 className="max-w-3xl text-4xl md:text-5xl">Tell me about your shop.</h2>
           <p className="mt-5 max-w-2xl text-foreground/80">
-            Six fields. No phone tag. I'll email you back inside 48 hours. If the report doesn't show $10K in fixable leaks, you pay $0. That's the guarantee.
+            7 quick questions. No phone tag. I'll email you back inside 48 hours. If the report doesn't show $10K in fixable leaks, you pay $0. That's the guarantee.
           </p>
           {formSubmitted ? (
             <div className="mt-10 overflow-hidden rounded-2xl border border-line bg-surface p-9 text-center">
@@ -133,17 +131,17 @@ function AssessmentPage() {
       </section>
 
       {/* 6. Scarcity footer */}
-      <section className="bg-surface/40 py-12">
+      <div className="bg-surface/40 py-12">
         <div className="container-x flex flex-wrap items-center justify-between gap-4 text-sm">
             <BetaSpots />
             <div className="text-foreground/85">
               <span className="mono-num text-amber">$497</span> beta · <span className="mono-num line-through">$1,494</span> standard
             </div>
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-foreground/75">
               Saved me 10+ hours a week &mdash; Shea S., Trading Community &middot; 10 hrs/week back in 30 days or free
             </div>
         </div>
-      </section>
+      </div>
     </SiteShell>
   );
 }
