@@ -29,7 +29,7 @@ export const Route = createFileRoute("/services/$slug")({
         ],
       };
     }
-    const title = `${i.name} Automation in ${i.town}, IL — Clockout · 7-Day Builds, You Own the System`;
+    const title = `${i.name} Automation in ${i.town}, IL — Clockout · Built in Days, You Own the System`;
     const description = `Flat-fee automation builds for ${i.name.toLowerCase()} shops in ${i.town} and across the Rockford–Roscoe–Beloit corridor. $497 beta. Money-Leak Map included. No contracts.`;
     const url = `https://clockout.us/services/${params.slug}`;
     return {
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/services/$slug")({
               "@type": "Offer",
               price: 497,
               priceCurrency: "USD",
-              description: "Beta pricing — Money-Leak Map + 7-day automation build, one-time flat fee.",
+              description: "Beta pricing — Money-Leak Map + built in days, one-time flat fee.",
             },
           }),
         },
@@ -177,7 +177,7 @@ function IndustryPage() {
                   <div className="mt-1 h-[10px] w-[10px] shrink-0 rounded-full bg-primary" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-foreground">7-day Build</div>
+                  <div className="text-sm font-semibold text-foreground">Built in days</div>
                   <div className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
                     Automation built inside your existing tools
                   </div>
@@ -194,7 +194,7 @@ function IndustryPage() {
                 <div className="w-px bg-line" />
               </motion.div>
 
-              {/* Phase 3 — Handover */}
+              {/* Phase 3 — You own it */}
               <motion.div
                 className="flex gap-4 items-start"
                 initial={{ opacity: 0, y: 12 }}
@@ -205,7 +205,7 @@ function IndustryPage() {
                   <div className="mt-1 h-[10px] w-[10px] shrink-0 rounded-full bg-primary" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-foreground">Day 9 Handover</div>
+                  <div className="text-sm font-semibold text-foreground">You own it</div>
                   <div className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
                     Every credential — you own everything, no contracts
                   </div>
@@ -262,13 +262,13 @@ function IndustryPage() {
             ))}
           </div>
           <p className="mt-8 text-sm text-muted-foreground">
-            Installed in the tools you already use. Your team gets zero new logins. You keep every credential.
+            Built right inside {i.toolName} — the system you already run. Your team gets zero new logins. You keep every credential.
           </p>
         </div>
       </section>
 
       {/* 5. HowItWorks */}
-      <HowItWorks />
+      <HowItWorks slug={i.slug} />
 
       {/* 6. OfferCard */}
       <section className="border-b border-line py-20 md:py-28">

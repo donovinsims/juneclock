@@ -7,6 +7,8 @@ export type Industry = {
   proof: { label: string; stat: string }[];
   pains: string[];
   built: string[];
+  demoText: string;
+  toolName: string;
   town: string;
 };
 
@@ -33,9 +35,11 @@ export const industries: Industry[] = [
       "Missed-call rescue: SMS callback within 30 seconds with a booking link",
       "Quote follow-up engine that recovers 20–35% of the ones that go cold",
       "Maintenance reactivation sequences that fire automatically before the season hits",
-      "Review pipeline that catches 5-stars publicly and 3-stars privately",
+      "Every happy customer gets an automatic, well-timed ask for a Google review",
       "Weekly performance snapshot: calls answered, quotes recovered, hours saved — in real numbers",
     ],
+    demoText: "Hey, this is Donovin with Northside HVAC — sorry I missed you. Want me to grab your address and book a tech first thing tomorrow?",
+    toolName: "Housecall Pro",
     town: "Loves Park",
   },
   {
@@ -63,6 +67,8 @@ export const industries: Industry[] = [
       "Review and repeat-customer flows so the people who already love you actually come back",
       "Weekly performance snapshot: emergencies triaged, invoices collected, hours saved — in real numbers",
     ],
+    demoText: "Hey, this is Donovin with Ajax Plumbing — sorry I missed you. Got a burst pipe or a leak? Text me your address and I'll get someone out tonight.",
+    toolName: "Housecall Pro",
     town: "Rockford",
   },
   {
@@ -90,6 +96,8 @@ export const industries: Industry[] = [
       "Quote-to-contract follow-up so the signature actually gets chased",
       "Weekly performance snapshot: storm leads captured, claims tracked, hours saved — in real numbers",
     ],
+    demoText: "Hey, this is Donovin with American Roofing — sorry I missed you. Need a storm-damage inspection or a repair estimate? Text me your address and I'll get a guy out this week.",
+    toolName: "JobNimbus",
     town: "Belvidere",
   },
   {
@@ -114,9 +122,11 @@ export const industries: Industry[] = [
       "Job-stage triggers for permits, inspections, and invoices — nothing falls between cracks",
       "Quote follow-up automation for the $3K+ residential jobs",
       "Maintenance and safety-check reactivation for repeat customers",
-      "Review request automation triggered on job completion",
+      "Every happy customer gets an automatic, well-timed ask for a Google review",
       "Weekly performance snapshot: service calls dispatched, quotes followed up, hours saved — in real numbers",
     ],
+    demoText: "Hey, this is Donovin with All-City Electric — sorry I missed you. Need a panel upgrade, service call, or a quote for new construction? Text me and I'll get you on the schedule.",
+    toolName: "ServiceTitan",
     town: "Machesney Park",
   },
   {
@@ -141,9 +151,11 @@ export const industries: Industry[] = [
       "Quote follow-up automation for design and install work",
       "Missed-call rescue so the phone doesn't have to ring inside your truck cab",
       "Add-on upsells (mulch, aeration, snow) triggered by job stage automatically",
-      "Review pipeline that turns happy clients into Google stars without you asking",
+      "Every happy customer gets an automatic, well-timed ask for a Google review",
       "Weekly performance snapshot: renewals triggered, quotes won, hours saved — in real numbers",
     ],
+    demoText: "Hey, this is Donovin with GreenScape — sorry I missed you. Need a spring cleanup estimate or want to lock in your mowing schedule? Text me your address.",
+    toolName: "Jobber",
     town: "Roscoe",
   },
   {
@@ -167,10 +179,12 @@ export const industries: Industry[] = [
       "Booking confirmations and 24-hour reminders by SMS automatically",
       "No-show recovery flow that re-books on a tap",
       "Churn-saver sequence the moment a recurring customer skips two cleans",
-      "Post-clean review request — 5-stars to Google, anything less straight to you",
+      "Every happy customer gets an automatic, well-timed ask for a Google review",
       "Front-desk AI that handles reschedules and new bookings 24/7",
       "Weekly performance snapshot: no-shows recovered, churn caught, hours saved — in real numbers",
     ],
+    demoText: "Hey, this is Donovin with Sparkle Clean — sorry I missed you. Want to book a recurring clean or reschedule your next appointment? Text me and I'll get you set.",
+    toolName: "Jobber",
     town: "Beloit",
   },
   {
@@ -198,6 +212,8 @@ export const industries: Industry[] = [
       "Tenant communication AI for the routine questions that eat your evenings",
       "Weekly performance snapshot: maintenance routed, owners updated, hours saved — in real numbers",
     ],
+    demoText: "Hey, this is Donovin with your property management team — sorry I missed you. Need to report a maintenance issue or check on a repair status? Text me your address and what's going on.",
+    toolName: "AppFolio",
     town: "Rockford",
   },
   {
@@ -225,6 +241,8 @@ export const industries: Industry[] = [
       "Transaction milestone communication so buyers stop calling you for updates",
       "Weekly performance snapshot: inquiries captured, listings running, hours saved — in real numbers",
     ],
+    demoText: "Hey, this is Donovin with your real estate team — sorry I missed you. Want to schedule a showing or get the latest updates on that listing? Just text me back.",
+    toolName: "Follow Up Boss",
     town: "Roscoe",
   },
 ];
