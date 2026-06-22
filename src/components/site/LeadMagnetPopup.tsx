@@ -74,8 +74,10 @@ export function LeadMagnetPopup() {
   const prefersReducedMotion =
     isBrowser() && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const record = getDismissal();
-  const suppressed = record?.convertedAt !== undefined || (record?.dismissedAt !== undefined && !isExpired(record));
+  const [suppressed] = useState(() => {
+    const record = getDismissal();
+    return record?.convertedAt !== undefined || (record?.dismissedAt !== undefined && !isExpired(record));
+  });
 
   // Scroll trigger (45%)
   useEffect(() => {
